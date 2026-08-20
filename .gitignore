@@ -1,0 +1,8 @@
+.DS_Store
+assets/
+**/phpunit.phar
+**/.phpunit.result.cache
+**/out/
+**/node_modules/
+**/cypress/videos/
+**/cypress/screenshots/

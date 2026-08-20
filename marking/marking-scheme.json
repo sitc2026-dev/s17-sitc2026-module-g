@@ -1,0 +1,169 @@
+{
+  "totalMark": 100,
+  "wsosSections": {
+    "1": "Work organization and self-management",
+    "2": "Communication and interpersonal skills",
+    "4": "Front-End Development",
+    "5": "Back-End Development"
+  },
+  "subCriterions": [
+    {
+      "name": "Project setup and organization",
+      "aspects": [
+        {
+          "type": "judgement",
+          "description": "Test project organization and suite maintainability",
+          "maxMark": 5,
+          "wsosSection": 1,
+          "judgementScoreDescription": [
+            "Specs missing or unstructured; unclear which behaviours are covered",
+            "Basic folder use but naming and helpers are inconsistent",
+            "Clear Cypress and PHPUnit layout following the provided skeletons",
+            "Excellent structure, reusable helpers, and easy-to-follow Arrange-Act-Assert"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Communication in tests",
+      "aspects": [
+        {
+          "type": "judgement",
+          "description": "Assertions and failure messages make intent clear",
+          "maxMark": 5,
+          "wsosSection": 2,
+          "judgementScoreDescription": [
+            "Opaque asserts; failures hard to interpret",
+            "Some clear cases; many brittle or silent checks",
+            "Most cases assert visible outcomes with stable selectors",
+            "Consistently readable expects; failures point to the product behaviour"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cypress — authentication and register",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "Login specs cover load, missing email, invalid credentials, suspended, and successful sign-in",
+          "maxMark": 8,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A1. Prefer data-testid selectors.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "Register specs cover swappable validation and both two-step success paths",
+          "maxMark": 6,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A2.",
+          "calculation": { "type": "pass-or-fail" }
+        }
+      ]
+    },
+    {
+      "name": "Cypress — stations, reserve, activity, QR",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "Stations list specs cover signed-in list, type filter, availability indication, guest browse",
+          "maxMark": 7,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A3.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "Station detail specs cover open hub, swap reserve, conflict UX, and block second reserve",
+          "maxMark": 8,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A4.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "Swap activity specs cover countdown/actions, confirm+receipt, and cancel",
+          "maxMark": 6,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A5.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "Charging activity specs cover start, live status, collect+receipt",
+          "maxMark": 5,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A6.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "QR specs cover emulator presence, valid navigation, mismatch rejection",
+          "maxMark": 3,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A7.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "HTTP error specs cover unauth redirect, server error message, double-submit guard",
+          "maxMark": 2,
+          "wsosSection": 4,
+          "extraDescription": "Assess against project-description A8.",
+          "calculation": { "type": "pass-or-fail" }
+        }
+      ]
+    },
+    {
+      "name": "PHPUnit — calculator and tiers",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "Billing calculator tests cover within-quota, overage, discount-on-overage-only, negative rejection",
+          "maxMark": 10,
+          "wsosSection": 5,
+          "extraDescription": "Assess against project-description B1.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "Discount tier tests cover highest match and no-match",
+          "maxMark": 5,
+          "wsosSection": 5,
+          "extraDescription": "Assess against project-description B2.",
+          "calculation": { "type": "pass-or-fail" }
+        }
+      ]
+    },
+    {
+      "name": "PHPUnit — documents, factory, service",
+      "aspects": [
+        {
+          "type": "measurement",
+          "description": "Document tests cover summary fields, CSV header/rows, shared base type",
+          "maxMark": 8,
+          "wsosSection": 5,
+          "extraDescription": "Assess against project-description B3.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "Factory tests cover partner summary, finance CSV, unknown kind rejection",
+          "maxMark": 6,
+          "wsosSection": 5,
+          "extraDescription": "Assess against project-description B4.",
+          "calculation": { "type": "pass-or-fail" }
+        },
+        {
+          "type": "measurement",
+          "description": "BillingService tests cover dated filename, file contents, notify on success, no notify on write/usage fail",
+          "maxMark": 16,
+          "wsosSection": 5,
+          "extraDescription": "Assess against project-description B5. date()/file_put_contents real dirs; mock concrete Notifier for call contracts.",
+          "calculation": { "type": "pass-or-fail" }
+        }
+      ]
+    }
+  ]
+}
